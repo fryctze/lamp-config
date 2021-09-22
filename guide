@@ -268,6 +268,18 @@ Alias /phpmyadmin "/usr/share/webapps/phpMyAdmin"
 /**
  * By fryctze -> /libraries/classes/Config.php#1282
 mkdir(): Read-only file system
+
+Solved by add line to /usr/share/webapps/phpMyAdmin/config.inc.php
 */
-    add line to /usr/share/webapps/phpMyAdmin/config.inc.php
 $cfg['TempDir'] = '/tmp/phpmyadmin';
+
+========================================
+
+/**
+blowfish secret
+https://phpsolved.com/phpmyadmin-blowfish-secret-generator/?g=[insert_php]echo%20$code;[/insert_php]
+
+then add it to /usr/share/webapps/phpMyAdmin/config.inc.php
+*/
+
+========================================
