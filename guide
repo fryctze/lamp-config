@@ -286,3 +286,16 @@ then add it to /usr/share/webapps/phpMyAdmin/config.inc.php
 */
 
 ========================================
+
+
+
+========================================= mysql configure user local
+mysql -u root -p
+# show user
+SELECT user FROM mysql.user;
+CREATE USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+ALTER USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+# add user level privileges
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+# add root user $WARNING$
+GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
