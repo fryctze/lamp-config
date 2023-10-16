@@ -246,13 +246,13 @@ LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
 Include conf/extra/php-fpm.conf
 Include conf/extra/phpmyadmin.conf
 
-========================================= conf php-fpm
+========================================= conf php-fpm.conf
 DirectoryIndex index.php index.html
 <FilesMatch \.php$>
     SetHandler "proxy:unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/"
 </FilesMatch>
 
-========================================= conf phpmyadmin
+========================================= conf phpmyadmin.conf
 Alias /phpmyadmin "/usr/share/webapps/phpMyAdmin"
 <Directory "/usr/share/webapps/phpMyAdmin">
     DirectoryIndex index.php
